@@ -38,7 +38,6 @@ app.get('/products',(req,res)=>{
     res.send({
         products :[]
     })
-
 })
 app.get('/',(req,res)=>{
     res.render('index',{
@@ -70,6 +69,7 @@ app.get('*',(req,res)=>{
         name : 'Mohamed Hesham'
     })
 })
-app.listen(5000,()=>{
+app.listen(3000,()=>{
     console.log('listening on port 3000')
+
 })
