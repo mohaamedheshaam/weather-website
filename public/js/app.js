@@ -19,7 +19,7 @@ then((response)=>{response.json().then((data)=>{
         messageOne.textContent = `Location :${data.place}`
         messageTwo.textContent = `Temprature:${data.data2.temp}`
         messageThree.textContent= `Status : ${data.data2.status}`
-console.log(data)
+console.log(data);
     }
 })})
 })
