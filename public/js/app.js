@@ -11,14 +11,16 @@ weatherForm.addEventListener('submit',(event)=>{
     messageOne.textContent = 'Loading...'
     messageTwo.textContent = ''
     messageThree.textContent = ''
+    messageFour.textContent = ''
     fetch(`/weather?address=`+location ).
 then((response)=>{response.json().then((data)=>{
     if(data.error){
        messageOne.textContent = data.error 
     } else{
         messageOne.textContent = `Location :${data.place}`
-        messageTwo.textContent = `Temprature:${data.data2.temp}`
-        messageThree.textContent= `Status : ${data.data2.status}`
+        messageTwo.textContent = data.data2.message
+        messageThree.textContent= "temperature High:"+data.data2.high;
+        messageFour.textContent= "temperature Low:"+data.data2.low;
 console.log(data);
     }
 })})

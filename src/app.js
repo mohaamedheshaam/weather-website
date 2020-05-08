@@ -26,7 +26,6 @@ app.get('/weather',(req,res)=>{
             return res.send({error})
          }
          res.send({data2,place})
-        
      })
     })
 })

@@ -9,7 +9,10 @@ else if(body.error){
     callback('this location is not valid',undefined)
 }
 else{
-    callback(undefined,{temp:body.currently.temperature,status:body.currently.summary})
+    callback(undefined,
+{message :`${body.daily.summary} It is currently ${body.currently.temperature} degrees out.There
+is a ${body.currently.precipProbability} % chance of rain. `,
+high:body.daily.data[0].temperatureHigh,low:body.daily.data[0].temperatureLow})
 }
 })
 }
